@@ -8,7 +8,7 @@ import { supabase } from './lib/supabase.js'
 // ── 단과대 / 카테고리 (정적 — 코드만 바뀜) ──
 const COLLEGES = [
   { id: 'all',    label: '전체' },
-  { id: 'gria',   label: '가리아' },
+  { id: 'it',     label: '아융대' },
   { id: 'biz',    label: '경영대' },
   { id: 'social', label: '사과대' },
   { id: 'ai',     label: 'AI인문대' },
@@ -16,7 +16,7 @@ const COLLEGES = [
   { id: 'eng',    label: '공대' },
   { id: 'bio',    label: '바나대' },
   { id: 'semi',   label: '반도체대' },
-  { id: 'it',     label: 'IT융합대' },
+  { id: 'gria',   label: '가리아' },
   { id: 'korean', label: '한의대' },
   { id: 'arts',   label: '예체대' },
 ]
