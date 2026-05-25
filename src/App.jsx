@@ -233,7 +233,7 @@ function MainScreen({ onSelectStore }) {
       <div className="bg-white border-b border-orange-100 px-4 pt-4 pb-3 space-y-3">
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-2xl font-extrabold text-gray-900">단대<span className="text-orange-400">.zip</span></h1>
+            <h1 className="text-2xl font-extrabold text-gray-900">해택<span className="text-orange-400">.zip</span></h1>
             <p className="text-xs text-gray-400 mt-0.5">가천대학교 단과대 제휴 혜택</p>
           </div>
           <p className="text-xs text-orange-400 font-semibold pb-0.5">
