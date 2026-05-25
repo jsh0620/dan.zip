@@ -9,6 +9,7 @@ import { supabase } from './lib/supabase.js'
 const COLLEGES = [
   { id: 'all',    label: '전체' },
   { id: 'it',     label: '아융대' },
+  { id: 'gria',   label: '가리아' },
   { id: 'biz',    label: '경영대' },
   { id: 'social', label: '사과대' },
   { id: 'ai',     label: 'AI인문대' },
@@ -16,7 +17,6 @@ const COLLEGES = [
   { id: 'eng',    label: '공대' },
   { id: 'bio',    label: '바나대' },
   { id: 'semi',   label: '반도체대' },
-  { id: 'gria',   label: '가리아' },
   { id: 'korean', label: '한의대' },
   { id: 'arts',   label: '예체대' },
 ]
@@ -26,7 +26,7 @@ const CATEGORIES = [
   { id: 'food',     label: '식당',     icon: 'Utensils' },
   { id: 'cafe',     label: '카페',     icon: 'Coffee' },
   { id: 'pharmacy', label: '약국/의료', icon: 'Pill' },
-  { id: 'beauty',   label: '뷰티/기타', icon: 'Sparkles' },
+  { id: 'study',   label: '문구/학습', icon: 'Sparkles' },
 ]
 
 const ICON_MAP = { Grid, Utensils, Coffee, Pill, Sparkles }
@@ -209,10 +209,11 @@ function MainScreen({ onSelectStore }) {
 
   const filtered = useMemo(() => {
     return stores.filter(s => {
+      const colleges = Array.isArray(s.colleges) ? s.colleges : []
       const matchCollege =
         selectedColleges.includes('all') ||
-        s.colleges?.includes('all') ||
-        selectedColleges.some(sc => s.colleges?.includes(sc))
+        colleges.includes('all') ||
+        selectedColleges.some(sc => colleges.includes(sc))
       const matchCat =
         selectedCats.includes('all') ||
         selectedCats.includes(s.category)
